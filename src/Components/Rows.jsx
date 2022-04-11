@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Youtube from "react-youtube";
-import movieTrailer from "movie-trailer";
+// import Youtube from "react-youtube";
+// import movieTrailer from "movie-trailer";
 
 const Rows = ({ title, fetchUrl, isLargeRow }) => {
   const base_url = "https://api.themoviedb.org/3/movie/";
