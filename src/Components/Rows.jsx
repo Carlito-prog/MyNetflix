@@ -18,24 +18,24 @@ const Rows = ({ title, fetchUrl, isLargeRow }) => {
     }
     fetchData();
   }, [fetchUrl]);
-  const opts = {
-    height: "390",
-    width: "100%",
-    playerVars: {
-      autoplay: 1,
-    },
-  };
-  const handleClick = (movie) => {
-    if (trailerUrl) {
-      setTrailerUrl("");
-    }
-    movieTrailer(movie?.title || movie?.name || movie?.original_name)
-      .then((url) => {
-        const urlParams = new URLSearchParams(new URL(url).search);
-        setTrailerUrl(urlParams.get("v"));
-      })
-      .catch((err) => console.error(err));
-  };
+  //   const opts = {
+  //     height: "390",
+  //     width: "100%",
+  //     playerVars: {
+  //       autoplay: 1,
+  //     },
+  //   };
+  //   const handleClick = (movie) => {
+  //     if (trailerUrl) {
+  //       setTrailerUrl("");
+  //     }
+  //     movieTrailer(movie?.title || movie?.name || movie?.original_name)
+  //       .then((url) => {
+  //         const urlParams = new URLSearchParams(new URL(url).search);
+  //         setTrailerUrl(urlParams.get("v"));
+  //       })
+  //       .catch((err) => console.error(err));
+  //   };
 
   return (
     <div className="row">
@@ -46,7 +46,7 @@ const Rows = ({ title, fetchUrl, isLargeRow }) => {
         {movies.map((movie) => {
           return (
             <img
-              onClick={handleClick(movie)}
+              //   onClick={handleClick(movie)}
               className={`card ${isLargeRow && "largeCard"}`}
               key={movie.id}
               src={movie?.image}
@@ -55,7 +55,7 @@ const Rows = ({ title, fetchUrl, isLargeRow }) => {
           );
         })}
       </div>
-      {trailerUrl && <Youtube videoId={trailerUrl} opts={opts} />}
+      {/* {trailerUrl && <Youtube videoId={trailerUrl} opts={opts} />} */}
     </div>
   );
 };
