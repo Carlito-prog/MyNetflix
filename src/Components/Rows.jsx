@@ -4,20 +4,21 @@ import axios from "axios";
 // import movieTrailer from "movie-trailer";
 
 const Rows = ({ title, fetchUrl, isLargeRow }) => {
-  const base_url = "https://api.themoviedb.org/3/movie/";
+  //   const base_url = "https://api.themoviedb.org/3/movie/";
   const [movies, setmovies] = useState([]);
-  const [isloading, setIsLoading] = useState(false);
-  const [trailerUrl, setTrailerUrl] = useState("");
+  //   const [isloading, setIsLoading] = useState(false);
+  //   const [trailerUrl, setTrailerUrl] = useState("");
 
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchUrl);
-      console.log(request);
+      //   console.log(request);
       setmovies(request.data.items);
-      setIsLoading(true);
+      //   setIsLoading(true);
     }
     fetchData();
   }, [fetchUrl]);
+
   //   const opts = {
   //     height: "390",
   //     width: "100%",
